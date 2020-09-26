@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { createItem, addItem, hideFormFalse, deleteItem} from "../actions/itemAction"
+import { createItem, addItem } from "../actions/itemAction"
 // import AddItemButton from './AddItemButton';
 // import ItemCard from '../ItemCard'
 import { showItemFormTrue, showItemFormFalse } from '../actions/displayAction'
@@ -75,7 +75,6 @@ const mapStateToProps = (state) => {
   console.log(state)
   return {
       closets: state.closet.closets,
-      hideForm: state.item.hideForm
   }
 }
 

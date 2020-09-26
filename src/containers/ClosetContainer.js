@@ -3,6 +3,7 @@ import AddItemButton from '../components/AddItemButton';
 import ItemCard from '../components/ItemCard';
 import { connect } from 'react-redux';
 import { createCloset, addToCloset} from '../actions/closetAction'
+import UserForm from "../components/UserForm"
 
 
 class CreateCloset extends React.Component {  
@@ -22,6 +23,7 @@ class CreateCloset extends React.Component {
         if (this.props.closets.length > 0) {
            return(
                 <div>
+                {this.props.items.length > 0 && <UserForm />}
                 <AddItemButton />
                 {this.renderItems()}
                 </div>
@@ -42,7 +44,7 @@ const mapStateToProps = (state) => {
     return {
         showNewItemButton: state.closet.showNewItemButton,
         items: state.item.items,
-        closets: state.closet.closets
+        closets: state.closet.closets,
     }
 }
     

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
@@ -9,12 +9,14 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import closetReducer from "./reducers/closetReducer"; 
 import itemReducer from "./reducers/itemReducer"
 import displayReducer from "./reducers/displayReducer"
+import userReducer from "./reducers/userReducer"
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
   closet: closetReducer,
   item: itemReducer,
-  display: displayReducer
+  display: displayReducer,
+  user: userReducer
 })
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

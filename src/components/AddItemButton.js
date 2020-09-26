@@ -25,30 +25,13 @@ class AddItemButton extends React.Component {
     }
 
     render(){
-
-        if (this.props.items.length > 0) {
-            return(
-                <div>
-                    <UserForm />
-                    <button id="button" onClick={this.handleItemButtonClick}> {this.buttonText()} </button>
-                    {this.props.showItemForm && <AddItemForm />}
-
-                </div>
-            )
-        }else{
-            return(
-                <div>
-                    <button id="button" onClick={this.handleItemButtonClick}> {this.buttonText()} </button>
-                    {this.props.showItemForm && <AddItemForm />}
-                </div>
-            )
-        }
-
-    }
-
-        
-        
-    
+        return(
+            <div>
+                <button id="button" onClick={this.handleItemButtonClick}> {this.buttonText()} </button>
+                {this.props.showItemForm && <AddItemForm />}
+            </div>
+        )
+    }   
 }
 
 const mapStateToProps = (state) => {
