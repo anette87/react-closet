@@ -32,7 +32,7 @@ function UserForm(props) {
     } else {
         return(
             <div>
-                <p> {props.user.data.attributes.name} Closet</p>
+                <p> {props.user.attributes.name} Closet</p>
             </div>
         )
     }

@@ -45,6 +45,7 @@ const mapStateToProps = (state) => {
         showNewItemButton: state.closet.showNewItemButton,
         items: state.item.items,
         closets: state.closet.closets,
+        user: state.user
     }
 }
     
