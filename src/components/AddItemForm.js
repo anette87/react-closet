@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { createItem, addItem, hideFormFalse} from "./actions/itemAction"
-import AddItemButton from './AddItemButton';
-import ItemCard from './ItemCard'
+import { createItem, addItem, hideFormFalse, deleteItem} from "../actions/itemAction"
+// import AddItemButton from './AddItemButton';
+// import ItemCard from '../ItemCard'
+import { showItemFormTrue, showItemFormFalse } from '../actions/displayAction'
 
 
 function AddItemForm(props) {
@@ -27,9 +28,6 @@ function AddItemForm(props) {
       season: season,
       image: image,
       closet_id: props.closets[0].data.id
-      // .map((closet) => {   
-      //   return closet.data.id;   
-      // })
     };
 
     props.createItem(item)
@@ -41,7 +39,7 @@ function AddItemForm(props) {
     setImage("");
     
     clearBox("itemForm")
-    // props.hideFormFalse()
+    props.showItemFormFalse()
   }
 
   return (
@@ -67,10 +65,7 @@ function AddItemForm(props) {
             
                   <input type="submit" value="Add"/>
                 </div>
-          </form>
-        </div>  
-        <div id="buttonAndCard">
-          {/* {props.hideForm && <AddItemButton /> } */}
+         </form>
         </div>
     </div>
   );
@@ -84,4 +79,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { createItem, addItem, hideFormFalse})(AddItemForm);
+export default connect(mapStateToProps, { createItem, addItem, showItemFormTrue, showItemFormFalse })(AddItemForm);

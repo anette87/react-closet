@@ -1,11 +1,11 @@
 export default function itemReducer(
-    state = { items: [], hideForm: false }, action) {
+    state = { items: [] }, action) {
     switch (action.type) {
       case "ADDED_ITEM":
-        return {...state, items: [...state.items, action.payload], hideForm: true}
-      case "HIDE_FORM_FALSE":
+        return {...state, items: [...state.items, action.payload]}
+      case "DELETE_ITEM":
         debugger
-        return {...state, hideForm: false}
+        return {items: state.items.filter( item => item.data.attributes.id !== action.payload)}
       default:
         return state;
     }

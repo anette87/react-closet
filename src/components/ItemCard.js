@@ -1,8 +1,16 @@
 import React from "react";
+import { deleteItem, deletedItem } from '../actions/itemAction'
+import { connect } from 'react-redux'
 
 function ItemCard(props) {
   const {category,brand,color,season,image,id} = props.item.data.attributes
 
+  const handleDeleteClick = () => {
+    props.deleteItem(id)
+    props.deletedItem(id)
+  }
+
+  
   return (
     <div className="card" id={`item-${id}`}>
       <img src={image} className="item-image" />
@@ -11,9 +19,9 @@ function ItemCard(props) {
       <h2>Color: {color}</h2>
       <h2>Season: {season}</h2>
      
-      <button> Delete </button>
+      <button onClick={handleDeleteClick}>Delete </button>
     </div>
   );
 }
 
-export default ItemCard;
+export default connect(null, { deleteItem, deletedItem })(ItemCard);

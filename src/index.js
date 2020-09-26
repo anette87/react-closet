@@ -8,11 +8,13 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import closetReducer from "./reducers/closetReducer"; 
 import itemReducer from "./reducers/itemReducer"
+import displayReducer from "./reducers/displayReducer"
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
   closet: closetReducer,
-  item: itemReducer
+  item: itemReducer,
+  display: displayReducer
 })
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

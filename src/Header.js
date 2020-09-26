@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import ClosetContainer from './ClosetContainer';
-import LoadCloset from './LoadCloset';
+import LoadCloset from './containers/LoadCloset';
+import ClosetContainer from './containers/ClosetContainer';
 
 class Header extends React.Component {
   
