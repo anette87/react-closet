@@ -39,7 +39,6 @@ function UserForm(props) {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.user)
     return {
         closets: state.closet.closets,
         user: state.user.user

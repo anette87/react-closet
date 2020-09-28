@@ -11,6 +11,8 @@ import itemReducer from "./reducers/itemReducer"
 import displayReducer from "./reducers/displayReducer"
 import userReducer from "./reducers/userReducer"
 import thunk from "redux-thunk";
+import { BrowserRouter as Router } from "react-router-dom";
+
 
 const rootReducer = combineReducers({
   closet: closetReducer,
@@ -24,7 +26,9 @@ const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}> 
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>  
   </React.StrictMode>,
   document.getElementById("root")

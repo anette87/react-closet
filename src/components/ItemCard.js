@@ -6,8 +6,8 @@ function ItemCard(props) {
   const {category,brand,color,season,image,id} = props.item.data.attributes
 
   const handleDeleteClick = () => {
-    props.deleteItem(id)
-    props.deletedItem(id)
+    props.deleteItem(id) //delete the item from db
+    props.deletedItem(id) //delete the item from state
   }
 
   

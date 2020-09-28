@@ -6,7 +6,6 @@ export default function itemReducer(
       case "DELETE_ITEM":
         return {items: state.items.filter( item => item.data.attributes.id !== action.payload)}
       case "LOAD_ITEMS":
-        debugger
         return {...state, items: action.payload}
       default:
         return state;

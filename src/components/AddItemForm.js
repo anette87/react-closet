@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { createItem, addItem } from "../actions/itemAction"
-// import AddItemButton from './AddItemButton';
-// import ItemCard from '../ItemCard'
-import { showItemFormTrue, showItemFormFalse } from '../actions/displayAction'
+import { createItem } from "../actions/itemAction"
+import { showItemFormFalse } from '../actions/displayAction'
+import { Redirect } from 'react-router';
 
 
 function AddItemForm(props) {
@@ -14,10 +13,7 @@ function AddItemForm(props) {
   const [season, setSeason] = useState("");
   const [image, setImage] = useState("");
 
-  const clearBox = (elementID) => {
-    document.getElementById(elementID).innerHTML = "";
-  }
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -38,15 +34,17 @@ function AddItemForm(props) {
     setSeason("");
     setImage("");
     
-    clearBox("itemForm")
     props.showItemFormFalse()
+    
   }
 
-  return (
-    <div className="inner-container">
-        <div className="box">
-            <form id="itemForm" onSubmit={handleSubmit}>
-              <div className="header">Add New Item To Your Closet</div>  
+  
+    if (props.showItemForm) {
+      return (
+        <div className="inner-container">
+          <div className="box">
+              <form id="itemForm" onSubmit={handleSubmit}>
+                <div className="header">Add New Item To Your Closet</div>  
                 <div className="input-group">
                   <label htmlFor="category">Category</label>
                   <input type="text" name="Category" className="login-input" onChange={(e) => setCategory(e.target.value)} value={category}placeholder="Category"/>
@@ -62,20 +60,26 @@ function AddItemForm(props) {
             
                   <label htmlFor="image">Image</label>
                   <input type="text" name="image" className="login-input" onChange={(e) => setImage(e.target.value)} value={image} placeholder="Image"/>
-            
+                  
                   <input type="submit" value="Add"/>
+                  
                 </div>
-         </form>
+            </form>
+          </div>
         </div>
-    </div>
-  );
-};
+      );
+    } else {
+      return(
+        <Redirect to="/closets/new"/>
+      );
+    }  
+  };
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
       closets: state.closet.closets,
+      showItemForm: state.display.showItemForm
   }
 }
 
-export default connect(mapStateToProps, { createItem, addItem, showItemFormTrue, showItemFormFalse })(AddItemForm);
+export default connect(mapStateToProps, { createItem, showItemFormFalse })(AddItemForm);

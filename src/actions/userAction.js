@@ -14,11 +14,13 @@ export const createUser = (user) => {
         };
 
         fetch("http://localhost:3000/users", configObj)
-          .then((res) => res.json())
-          .then((newUser) => dispatch(addUser(newUser.data))
-          );
+          .then((res) => res.ok ? res.json() : alert("An error has occurred. Error Options: 1.Email is already in use  2.A required field is empty Please Try Again!"))
+          .then((newUser) => dispatch(addUser(newUser.data)))
+          .catch((error) => error)
   }
 }
+
+
 
 export const findUser = (submittedUser) => {
     return (dispatch) => {
@@ -26,12 +28,10 @@ export const findUser = (submittedUser) => {
         .then(response => response.json())
         .then((users) => {
           let foundUser = users.data.find(user => user.attributes.email === submittedUser.email)
-          debugger
           dispatch(addUser(foundUser))
           dispatch(loadCloset(foundUser.attributes.closet))
           dispatch(loadItems(foundUser.attributes.closet.data.attributes.items))
-          // debugger
-          // console.log(foundUser)
+          
       });     
     }
 }

@@ -1,34 +1,14 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { findUser } from '../actions/userAction';
-import ClosetContainer from '../containers/ClosetContainer';
+import ClosetContainer from './CreateClosetContainer';
+import LoadCloset from '../components/LoadCloset'
 
-function LoadCloset(props) {
-
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    const user = {
-      email: email  
-    }
-
-    props.findUser(user)
-
-    setEmail("");
-  }
+function LoadClosetContainer(props) {
   
   if (!props.user){
   return (
-    <div className="App">
-      <form id="loadClosetForm" onSubmit={handleSubmit} >
-
-        <label htmlFor="Email">Email</label>
-        <input type="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email}/><br></br>
-        
-        <input type="submit" value="Load Your Closet"/><br></br>
-      </form>
+    <div>
+      <LoadCloset />
     </div>
   );
   }else{
@@ -41,10 +21,9 @@ function LoadCloset(props) {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.user)
   return {
       user: state.user.user
   }
 }
 
-export default connect(mapStateToProps, { findUser })(LoadCloset);
+export default connect(mapStateToProps)(LoadClosetContainer);
