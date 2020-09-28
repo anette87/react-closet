@@ -14,7 +14,11 @@ function HeaderRoutes() {
         </Link>
         <div className="box-container" class="min-vh-100 min-vw-100">
           <Switch>
-            <Route exact path="/" render={()=> <h1 class="text-xl-center badge-dark rounded-block shadow-lg p-3 title ">Welcome To Your Online Closet!</h1>} /> 
+            <Route exact path="/" render={()=> 
+              <div>
+                  <h1 class="text-xl-center badge-dark rounded-block shadow-lg p-3 title ">Welcome To Your Online Closet!</h1>
+                  <h2 class="center-text background-white">A CLOSET ORGANIZATION SYSTEM</h2>
+              </div>} /> 
             <Route exact path="/closets/new">
               <CreateClosetContainer />
             </Route>

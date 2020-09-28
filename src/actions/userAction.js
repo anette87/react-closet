@@ -28,10 +28,13 @@ export const findUser = (submittedUser) => {
         .then(response => response.json())
         .then((users) => {
           let foundUser = users.data.find(user => user.attributes.email === submittedUser.email)
-          dispatch(addUser(foundUser))
-          dispatch(loadCloset(foundUser.attributes.closet))
-          dispatch(loadItems(foundUser.attributes.closet.data.attributes.items))
-          
+            if (foundUser){
+              dispatch(addUser(foundUser))
+              dispatch(loadCloset(foundUser.attributes.closet))
+              dispatch(loadItems(foundUser.attributes.closet.data.attributes.items))}
+            else{
+              alert("An error has occurred. Email address not found.")
+            }    
       });     
     }
 }

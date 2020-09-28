@@ -13,7 +13,7 @@ function CreateCloset(props){
     return(
         <div>
             <div className="App" id="createCloset">
-                <h1 class="text-xl-center badge-dark rounded-pill shadow-lg p-3 title1" onClick={handleCreateClosetClick}> Click Here To Create Your Closet!</h1>   
+                <h1 class="text-xl-center badge-dark rounded-pill shadow-lg p-3 title1" id="createClosetButton" onClick={handleCreateClosetClick}> Click Here To Create Your Closet!</h1>   
             </div>
         </div>
     )

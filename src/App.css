@@ -96,3 +96,9 @@
   width: 100%;
   height: auto;
 }
+
+#createClosetButton:hover {
+  cursor: pointer;
+  background: rgba(185, 183, 183, 0.822) ;
+  
+}

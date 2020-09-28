@@ -42,7 +42,7 @@ function UserForm(props) {
     } else {
         return(
             <div>
-                <p> {props.user.attributes.name} Closet</p>
+                <p class="display-3 background-white"><strong> Hi {props.user.attributes.name}! This's Your Closet! </strong></p>
             </div>
         )
     }
