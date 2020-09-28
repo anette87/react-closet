@@ -1,116 +1,33 @@
-/*.App {
+
+.footer {
+  background-color: #3e3e42;
+  padding: 3px;
   text-align: center;
+  font-family: Tahoma;
+  color: whitesmoke
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  padding-top: 20%;
+  margin-top: 25%;
+  background: linear-gradient(to top left, #19191a 26%, #212529 82%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title1 {
+  padding-top: 20%;
+  margin-top: 25%;
+  background: linear-gradient(to top left, #f1f2f3 26%, #f5f5f6 82%);
+  color: #212529;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.root-container {
-  width: 100%;
-  height: 100%;
+.title2{
+  background: linear-gradient(to top left, #19191a 26%, #212529 82%);
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
-
-.box-controller {
-  visibility: visible;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 24em;
-  min-width: 21em;
-  height: 35px;
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(15, 15, 15, 0.2);
-  box-shadow: 0px 0px 20px 0px rgba(15, 15, 15, 0.2);
-  margin-bottom: 30px;
-  align-items: center;
-  transition: visibility 0.5s ease-out;
-}
-
-.inner-container {
-  transition: visibility 0.2s ease-out;
-}
-
-/*Header*/
-.header {
-  text-align: center;
-  padding: 5px;
-  margin-bottom: 17px;
-  margin-left: 35px;
-  margin-right: 35px;
-  font-family: Ozxgen, sans-serif;
-  font-size: 22px;
-  border-bottom: 2px solid;
-  color:#70a1ff;
-}
-
-.box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-/* Label */
-.login-label {
-  font-family: Oxygen, sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  padding-left: 5px;
-}
-
-/* Input */
-.login-input {
-  height: 2.1em;
-  border-radius: 3px;
-  border: 1px solid;
-  color:#70a1ff;
-  transition: border 0.4s ease-out;
-  padding: 13px;
-  font-family: Oxygen, sans-serif;
-  font-size: 19px;
-  color: #3e3e42;
-  background: rgba(15, 15, 15, 0.01);
+  height: 200px;
+  
 }
 
 .login-input:hover {
@@ -118,21 +35,9 @@
   color:#70a1ff;
 }
 
-.login-input:focus {
-  border: 2px solid #6565e7;
-  box-shadow: 0px 0px 20px rgba(15, 15, 15, 0.2);
-}
-
-/* Input Placeholder */
-.login-input::placeholder {
-  font-family: Oxygen, sans-serif;
-  font-size: 16px; color: rgba(46, 213, 116, 0.839);
-  color: rgba(15, 15, 15, 0.4);
-}
-
 .login-btn {
-  padding: 2px 30px;
-  /* background-color: #417cef; */
+  padding: 2px 30px; 
+  background-color: #417cef; 
   border: 0;
   font-size: 18px;
   border-radius: 3px;
@@ -142,44 +47,52 @@
   border: 2px solid #417cef;
   transition: background-color 0.3s ease-out;
   cursor: pointer;
+} 
+
+/* Label */
+.login-label {
+  font-family: Oxygen, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 5px;
+  margin-bottom: 5px;
 }
 
-.login-btn:hover,
-.login-btn:focus {
-  background-color: #417cef;
-  color: white;
+.background-white{
+  background-color: rgba(255, 255, 255, 0.822);
 }
 
-.danger-error {
-  color: #e74c3c;
-  font-size: 16px;
-}
-
-/* Password */
-.password-state {
+.box {
   display: flex;
-  flex-direction: row;
-  margin-top: 20px;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.pwd {
-  height: 6px;
-  flex: 1;
-  visibility: hidden;
+.center-text{
+  text-align: center;
 }
 
-.pwd-weak {
-  background-color: #e74c3c;
+.right-text{
+  text-align: right;
 }
 
-.pwd-medium {
-  background-color: #3498db;
+.left-text{
+  text-align: left;
 }
 
-.pwd-strong {
-  background-color: #2ecc71;
+.background-white2{
+  background-color: rgba(255, 255, 255, 0.822);
+  width:cover;
+  height:cover;
 }
 
-.show {
-  visibility: visible;
+.container {
+  width: cover;
+  height: cover;
+}
+
+/* resize images */
+.container img {
+  width: 100%;
+  height: auto;
 }

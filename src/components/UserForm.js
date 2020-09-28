@@ -24,8 +24,18 @@ function UserForm(props) {
     if (!props.user) {
         return(
             <div>
-                <form id="userForm" onSubmit={handleSubmit}>
-                    <input type="text" name="name" onChange={(e) => setName(e.target.value)} value={name} placeholder="Enter Your Name"/><input type="email" name="email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder="Enter Your Email"/><input type="submit" value="SAVE YOUR CLOSET"/>
+                <form id="userForm" class="mb-5" onSubmit={handleSubmit}>
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <input type="text" name="name" class="form-control mb-4" onChange={(e) => setName(e.target.value)} value={name} placeholder="Enter Your Name"/>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <input type="email" name="email" class="form-control mb-4" onChange={(e) => setEmail(e.target.value)} value={email} placeholder="Enter Your Email"/>
+                        </div>
+                        <div class="col-12 col-md-2">   
+                            <input type="submit" class="btn btn-secondary left-text" value="SAVE YOUR CLOSET"/>
+                        </div>
+                    </div>
                 </form>
             </div>
         )

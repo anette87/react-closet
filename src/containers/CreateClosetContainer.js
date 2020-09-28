@@ -55,10 +55,26 @@ class CreateClosetContainer extends React.Component {
         if (this.props.closets.length > 0) {
            return(
                 <div>
-                {this.props.items.length > 0 && <UserForm />}
-                {this.props.items.length > 0 && <ItemSearch search={this.state.search} handleSearchChange={this.handleSearchChange} handleSelectChange={this.handleOptionSelect} options={this.itemsOptions} enabledSearch={this.state.enabledSearch} />}
-                <AddItemButton />
-                {this.renderItems()}
+                    <div class="row">
+                    <div class="col-12 col-md-2">
+                    </div>
+                    <div class="col-12 col-md-8 center-text mt-3">
+                        {this.props.items.length > 0 && <UserForm />}
+                        {this.props.items.length > 0 && <ItemSearch search={this.state.search} handleSearchChange={this.handleSearchChange} handleSelectChange={this.handleOptionSelect} options={this.itemsOptions} enabledSearch={this.state.enabledSearch} />}
+                    </div>
+                    </div>
+                    <div class="col-12 col-md-2">
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <AddItemButton />
+                            {this.renderItems()}
+                        </div>
+                        <div class="col-12 col-md-4">
+                        </div>
+                    </div>
                 </div>
             )
         } else {

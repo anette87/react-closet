@@ -12,9 +12,9 @@ render() {
   if (!this.props.user){
     return (
       <Switch>
-        <div className='controller' >
+        <div className='controller'>
           <Link to="/closets/new">
-            <button>Create Closet</button>
+            <button class="d-block p-2 bg-dark text-white btn-block">Create Closet</button>
           </Link>  
           <HeaderRoutes />
         </div>   

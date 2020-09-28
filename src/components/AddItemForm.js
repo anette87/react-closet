@@ -42,29 +42,28 @@ function AddItemForm(props) {
     if (props.showItemForm) {
       return (
         <div className="inner-container">
-          <div className="box">
-              <form id="itemForm" onSubmit={handleSubmit}>
-                <div className="header">Add New Item To Your Closet</div>  
-                <div className="input-group">
-                  <label htmlFor="category">Category</label>
-                  <input type="text" name="Category" className="login-input" onChange={(e) => setCategory(e.target.value)} value={category}placeholder="Category"/>
+          <div class="row">
+            <div class="col-12 col-md-4">
+            </div>
+              <div class="col-12 col-md-4">
+                <form id="itemForm" class="text-center border border-light p-5 login-btn background-white" onSubmit={handleSubmit}>
+                  <div class="card-header info-color white-text text-center py-4 login-input:hover mb-4">Add New Item To Your Closet</div>  
+                  <div className="input-group" className="center-text">
+                    
+                      <span class="center-text">
+                      <input type="text" name="Category" className="login-input" class="form-control mb-4" onChange={(e) => setCategory(e.target.value)} value={category}placeholder="Category"/>
+                      <input type="brand" name="brand" className="login-input" class="form-control mb-4" onChange={(e) => setBrand(e.target.value)} value={brand} placeholder="Brand"/>
+                      <input type="text" name="color" className="login-input" class="form-control mb-4" onChange={(e) => setColor(e.target.value)} value={color} placeholder="Color"/>
+                      <input type="season" name="season" className="login-input" class="form-control mb-4" onChange={(e) => setSeason(e.target.value)} value={season} placeholder="Season"/>
+                      <input type="text" name="image" className="login-input" class="form-control mb-4" onChange={(e) => setImage(e.target.value)} value={image} placeholder="Image"/>
+                      <input type="submit" class="btn btn-secondary" value="Add Item"/>
+                      </span>
 
-                  <label htmlFor="brand">Brand</label>
-                  <input type="brand" name="brand" className="login-input" onChange={(e) => setBrand(e.target.value)} value={brand} placeholder="Brand"/>
-            
-                  <label htmlFor="color">Color</label>
-                  <input type="text" name="color" className="login-input" onChange={(e) => setColor(e.target.value)} value={color} placeholder="Color"/>
-            
-                  <label htmlFor="season">Season</label>
-                  <input type="season" name="season" className="login-input" onChange={(e) => setSeason(e.target.value)} value={season} placeholder="Season"/>
-            
-                  <label htmlFor="image">Image</label>
-                  <input type="text" name="image" className="login-input" onChange={(e) => setImage(e.target.value)} value={image} placeholder="Image"/>
-                  
-                  <input type="submit" value="Add"/>
-                  
-                </div>
-            </form>
+                  </div>
+                </form>
+              </div>
+              <div class="col-12 col-md-4">
+              </div>
           </div>
         </div>
       );

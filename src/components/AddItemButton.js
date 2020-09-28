@@ -12,9 +12,9 @@ class AddItemButton extends React.Component {
     render(){
         return(
             
-            <div>
+            <div class="mt-5">
                 <Link to="/items/new">
-                    <button id="button" onClick={this.handleClick}> Add Item </button>
+                    <button id="button" class="d-block p-2 bg-dark text-white btn-block rounded-pill mb-4" onClick={this.handleClick}> Add Item </button>
                 </Link>
             </div>
         )   

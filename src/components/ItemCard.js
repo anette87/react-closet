@@ -12,14 +12,13 @@ function ItemCard(props) {
 
   
   return (
-    <div className="card" id={`item-${id}`}>
-      <img src={image} className="item-image" />
+    <div className="card m-5" id={`item-${id}`} class="background-white2 mb-3 center-text">
+      <img src={image} className="item-image" class="container" />
       <h2>Category: {category}</h2>
       <h2>Brand: {brand}</h2>
       <h2>Color: {color}</h2>
       <h2>Season: {season}</h2>
-     
-      <button onClick={handleDeleteClick}>Delete </button>
+      <button class="d-block p-2 bg-dark text-white btn-block rounded-block mt-2 mb-2" onClick={handleDeleteClick}>Delete </button>
     </div>
   );
 }

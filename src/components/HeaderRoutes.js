@@ -8,13 +8,13 @@ import { Switch, Route, Link } from "react-router-dom";
 function HeaderRoutes() {
 
     return (
-      <div className='controller' >
+      <div className='controller'>
         <Link to="/closets">
-          <button>Access to Closet</button>
+          <button class="d-block p-2 bg-dark text-white btn-block">Access to Closet</button>
         </Link>
-        <div className="box-container">
+        <div className="box-container" class="min-vh-100 min-vw-100">
           <Switch>
-            <Route exact path="/" render={()=> <h1>Welcome to your closet!</h1>} /> 
+            <Route exact path="/" render={()=> <h1 class="text-xl-center badge-dark rounded-block shadow-lg p-3 title ">Welcome To Your Online Closet!</h1>} /> 
             <Route exact path="/closets/new">
               <CreateClosetContainer />
             </Route>
