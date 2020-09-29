@@ -1,3 +1,23 @@
+## React-Redux Porfolio Project
+
+## Description
+
+This program is a Online Closet Application. The user can create a closet and saved in the database to go back and add or delete items. This application use a Rails API as a database. 
+<p>Access to backend repo <a href='https://github.com/anette87/closet-backend'>here</a></p> 
+
+## Install Instructions
+
+Clone the repo into your IDE. Run bundle install. After that, run shotgun to run your server. Use the domain (localhost) into a web browser URL to see the application. 
+
+## Contributors Guide
+
+When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+
+## License 
+
+<p>View license <a href='https://learn.co/lessons/sinatra-fwitter-group-project'>here</a></p> 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
