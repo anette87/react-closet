@@ -16,7 +16,7 @@ function AddItemForm(props) {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log('a')
     const item = {
       category: category,
       brand: brand,
@@ -27,7 +27,7 @@ function AddItemForm(props) {
     };
 
     props.createItem(item)
-    
+    console.log('g')
     setCategory("");
     setBrand("");
     setColor("");

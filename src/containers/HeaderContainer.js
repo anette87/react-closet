@@ -11,14 +11,12 @@ class Header extends React.Component {
 render() {
   if (!this.props.user){
     return (
-      <Switch>
         <div className='controller'>
           <Link to="/closets/new">
             <button class="d-block p-2 bg-dark text-white btn-block">Create Closet</button>
           </Link>  
           <HeaderRoutes />
         </div>   
-      </Switch>
     );
   }else{
     return (

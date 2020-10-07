@@ -3,7 +3,9 @@ export const addItem= (item) => ({ type: "ADDED_ITEM", payload: item });
 export const deletedItem = (id) => ({type: "DELETE_ITEM", payload: id});
 
 export const createItem = (item) => {
+  console.log('b')
   return (dispatch) => {
+    console.log('c')
       const configObj = {
           method: "POST",
           headers: {
@@ -15,9 +17,13 @@ export const createItem = (item) => {
 
         fetch("http://localhost:3000/items", configObj)
           .then((res) => res.json())
-          .then((newItem) => dispatch(addItem(newItem))
-          );
+          .then((newItem) => {
+            console.log('d')
+            return dispatch(addItem(newItem))
+          });
+          console.log('e')
   }
+  console.log('f')
 }
 
 export const deleteItem = (id) => {
