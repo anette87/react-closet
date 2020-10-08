@@ -11,7 +11,7 @@ export const createCloset = (closet) => {
             body: JSON.stringify(closet),
           };
 
-          fetch("http://localhost:3000/closets", configObj)
+          fetch("https://online-closet-backend.herokuapp.com/closets", configObj)
             .then((res) => res.json())
             .then((newCloset) => dispatch(addToCloset(newCloset)));
     }

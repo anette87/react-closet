@@ -13,7 +13,7 @@ export const createUser = (user) => {
           body: JSON.stringify(user),
         };
 
-        fetch("http://localhost:3000/users", configObj)
+        fetch("https://online-closet-backend.herokuapp.com/users", configObj)
           .then((res) => res.ok ? res.json() : alert("An error has occurred. Error Options: 1.Email is already in use  2.A required field is empty Please Try Again!"))
           .then((newUser) => dispatch(addUser(newUser.data)))
           .catch((error) => error)
@@ -24,7 +24,7 @@ export const createUser = (user) => {
 
 export const findUser = (submittedUser) => {
     return (dispatch) => {
-      fetch("http://localhost:3000/users")
+      fetch("https://online-closet-backend.herokuapp.com/users")
         .then(response => response.json())
         .then((users) => {
           let foundUser = users.data.find(user => user.attributes.email === submittedUser.email)

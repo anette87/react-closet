@@ -15,7 +15,7 @@ export const createItem = (item) => {
           body: JSON.stringify(item),
         };
 
-        fetch("http://localhost:3000/items", configObj)
+        fetch("https://online-closet-backend.herokuapp.com/items", configObj)
           .then((res) => res.json())
           .then((newItem) => {
             console.log('d')
@@ -35,7 +35,7 @@ export const deleteItem = (id) => {
          "Accept": "application/json"
       },
     };
-    return fetch(`http://localhost:3000/items/${id}`, configObj)
+    return fetch(`https://online-closet-backend.herokuapp.com/items/${id}`, configObj)
     .then(resp => resp.json())
 
 }
