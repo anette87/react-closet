@@ -5,14 +5,14 @@ import { connect } from 'react-redux'
 class ItemCard extends React.Component {
 
   state = {
-    liked: "☆" 
+    liked: "♡" 
   }
 
   handleLikeClick = () => {
-    if (this.state.liked === "☆" ){
-      this.setState({liked: "★" })
+    if (this.state.liked === "♡" ){
+      this.setState({liked: "♥" })
     }else
-    { this.setState({liked: "☆" })
+    { this.setState({liked: "♡" })
     }
   }
 
@@ -34,8 +34,8 @@ class ItemCard extends React.Component {
           <h2>Brand: {brand}</h2>
           <h2>Color: {color}</h2>
           <h2>Season: {season}</h2>
-          <button class="d-block p-2 bg-dark text-white btn-block rounded-block mt-2 mb-2" onClick={(e) => {this.handleDeleteClick(id)}}>Delete </button>
           <p onClick={this.handleLikeClick}> Like {this.state.liked} </p>
+          <button class="d-block p-2 bg-dark text-white btn-block rounded-block mt-2 mb-2" onClick={(e) => {this.handleDeleteClick(id)}}>Delete </button>
         </div>
       </div>
     );
